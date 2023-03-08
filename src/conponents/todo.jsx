@@ -3,12 +3,14 @@ import TodoForm from "./todoForm";
 import { RiCloseCircleFill } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 
+// Todo conponent plus prop drills needed
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
+	// usestate  to edit the entrys on the list
 	const [edit, setEdit] = useState({
 		id: null,
 		value: "",
 	});
-
+	// edits the text value of the then ends then to the setEdit function
 	const submitUpdate = (value) => {
 		updateTodo(edit.id, value);
 		setEdit({
@@ -16,7 +18,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 			value: "",
 		});
 	};
-
+	// updates the TodoForm conponent
 	if (edit.id) {
 		return (
 			<TodoForm
@@ -25,6 +27,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 			/>
 		);
 	}
+	// maps the elements in the array and renders them onto todoList
 
 	return todos.map((todo, index) => (
 		<div
