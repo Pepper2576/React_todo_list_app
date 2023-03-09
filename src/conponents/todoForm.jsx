@@ -41,7 +41,7 @@ const TodoForm = (props) => {
 				onChange={handleChange}
 				ref={inputRef}
 			/>
-			<button className='todo-btn'>Add to list</button>
+			<button className='todo-btn btn-primary'>Add to list</button>
 		</form>
 	);
 };
